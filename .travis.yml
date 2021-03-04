@@ -10,6 +10,7 @@ install:
   - npm i -g yarn
   - yarn
   - rake db:migrate
+  - rails webpacker:install
 
 script:
   - bundle exec rake db:setup
