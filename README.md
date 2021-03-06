@@ -10,3 +10,7 @@ Implementação de software como requisito para aprovação na disciplina de Eng
 
 ### Descrição
 Sistema para controle de disciplinas, turmas, alunos e atividades de escola do fundamental.
+
+
+###Link do sistema no Heroku
+https://gerenciadisciplinas.herokuapp.com/
