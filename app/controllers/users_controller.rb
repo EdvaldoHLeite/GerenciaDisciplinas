@@ -9,6 +9,9 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
+    if current_user.id != @user.id
+      redirect_to current_user
+    end
   end
 
   # GET /users/new
@@ -18,6 +21,9 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if current_user.id != @user.id
+      redirect_to current_user
+    end
   end
 
   # POST /users or /users.json
