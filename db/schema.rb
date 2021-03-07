@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_07_112205) do
+ActiveRecord::Schema.define(version: 2021_03_07_190048) do
+
+  create_table "turmas", force: :cascade do |t|
+    t.string "letra"
+    t.integer "anoLetivo"
+    t.integer "ano"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "login"

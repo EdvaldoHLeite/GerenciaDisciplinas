@@ -21,7 +21,7 @@ Feature: User
     Given Eu estou na pagina de cadastro
     And Preencho login com "Evd", senha com "123456" e confirmacao de senha com "123456"
     When Clico em cadastrar
-    Then Eu vejo a mensagem de erro "Login is too short (minimum is 5 characters)"
+    Then Eu vejo a mensagem de erro "Login com tamanho de 5 a 20"
 
   Scenario: cadastro com senha diferente de confirmacao de senha
     Given Eu estou na pagina de cadastro
@@ -36,4 +36,4 @@ Feature: User
     When Clico em editar o usuario de login "Evandro"
     And Preencho login com "Evd", senha com "12345678" e confirmacao de senha com "12345678"
     When Clico no botao editar
-    Then Eu vejo a mensagem de erro "Login is too short"
+    Then Eu vejo a mensagem de erro "Login com tamanho de 5 a 20"
