@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Disciplinas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Anoletivo</th>
+      <th>Turma</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @disciplinas.each do |disciplina| %>
+      <tr>
+        <td><%= disciplina.nome %></td>
+        <td><%= disciplina.anoLetivo %></td>
+        <td><%= disciplina.turma_id %></td>
+        <td><%= disciplina.user_id %></td>
+        <td><%= link_to 'Show', disciplina %></td>
+        <td><%= link_to 'Edit', edit_disciplina_path(disciplina) %></td>
+        <td><%= link_to 'Destroy', disciplina, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Disciplina', new_disciplina_path %>
