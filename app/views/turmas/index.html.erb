@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Turmas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Letra</th>
+      <th>Anoletivo</th>
+      <th>Ano</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @turmas.each do |turma| %>
+      <tr>
+        <td><%= turma.letra %></td>
+        <td><%= turma.anoLetivo %></td>
+        <td><%= turma.ano %></td>
+        <td><%= link_to 'Show', turma %></td>
+        <td><%= link_to 'Edit', edit_turma_path(turma) %></td>
+        <td><%= link_to 'Destroy', turma, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Turma', new_turma_path %>
