@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authorized, only: [:show, :edit]
+  before_action :authorized, only: [:edit]
   before_action :set_user, only: %i[ show edit update destroy ]
 
   # GET /users or /users.json
@@ -9,9 +9,6 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
-    if current_user.id != @user.id
-      redirect_to current_user
-    end
   end
 
   # GET /users/new
