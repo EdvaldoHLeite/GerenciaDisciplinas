@@ -1,2 +1,15 @@
-<h1>Gerencia Disciplinas</h1>
-<h2> Bem vindo!!! </h2>
+<html>
+
+  <body>
+    <%= yield %>
+    <h1>Gerencia Disciplinas</h1>
+    <h2> Bem vindo!!! </h2>
+    <br>
+
+      <% if logged_in? %>
+        <%= button_to "Logout", sessions_path, method: :delete %>
+      <% else %>
+        <%= button_to "Fazer login", login_path, method: :get %>
+      <% end %>
+  </body>
+</html>
