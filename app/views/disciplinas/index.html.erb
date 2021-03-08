@@ -22,7 +22,7 @@
         <td><%= disciplina.user_id %></td>
         <td><%= link_to 'Show', disciplina %></td>
         <td><%= link_to 'Edit', edit_disciplina_path(disciplina) %></td>
-        <td><%= link_to 'Destroy', disciplina, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', disciplina, method: :delete, data: { confirm: 'Are you sure?' }, id: "d-#{disciplina.nome}-#{disciplina.anoLetivo}-#{disciplina.turma_id}-#{disciplina.user_id}" %></td>
       </tr>
     <% end %>
   </tbody>
