@@ -1,5 +1,6 @@
 class DisciplinasController < ApplicationController
   before_action :set_disciplina, only: %i[ show edit update destroy ]
+  before_action :set_turmas, only: %i[ new create edit update ]
 
   # GET /disciplinas or /disciplinas.json
   def index
@@ -21,7 +22,8 @@ class DisciplinasController < ApplicationController
 
   # POST /disciplinas or /disciplinas.json
   def create
-    @disciplina = Disciplina.new(disciplina_params)
+    params = {'user_id':current_user.id}.merge(disciplina_params)
+    @disciplina = Disciplina.new(params)
 
     respond_to do |format|
       if @disciplina.save
@@ -60,6 +62,10 @@ class DisciplinasController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_disciplina
       @disciplina = Disciplina.find(params[:id])
+    end
+
+    def set_turmas
+      @turmas = Turma.all.map{ |c| [c.ano.to_s + "º-" + c.letra.to_s + "-" + c.anoLetivo.to_s, c.id]}
     end
 
     # Only allow a list of trusted parameters through.
