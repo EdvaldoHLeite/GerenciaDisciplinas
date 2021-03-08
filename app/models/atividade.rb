@@ -1,5 +1,6 @@
 class Atividade < ApplicationRecord
   belongs_to :disciplina
+  has_many :avaliacaos, dependent: :destroy
 
   validates :titulo, presence: true, length: {minimum: 5, maximum: 20, message: "Tamanho do titulo de 5-20 caracteres"}
   validates :descricao, length: {minimum: 0, maximum: 100, message: "Descrição com no máximo 100 caracteres"}
