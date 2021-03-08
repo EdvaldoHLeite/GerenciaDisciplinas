@@ -1,6 +1,7 @@
 class DisciplinasController < ApplicationController
   before_action :set_disciplina, only: %i[ show edit update destroy ]
   before_action :set_turmas, only: %i[ new create edit update ]
+  before_action :authorized, only: %i[ index show new edit create update destroy]
 
   # GET /disciplinas or /disciplinas.json
   def index
