@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :turma_id %>
-    <%= form.text_field :turma_id %>
+    <%= form.select(:turma_id, options_for_select(@turmas)) %>
   </div>
 
   <div class="actions">
