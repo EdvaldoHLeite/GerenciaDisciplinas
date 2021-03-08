@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :disciplinas
+  resources :turmas
   resources :users
   root 'welcome#home'
 

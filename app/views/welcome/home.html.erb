@@ -6,10 +6,9 @@
     <h2> Bem vindo!!! </h2>
     <br>
 
-      <% if logged_in? %>
-        <%= button_to "Logout", sessions_path, method: :delete %>
-      <% else %>
+      <% if !logged_in? %>
         <%= button_to "Fazer login", login_path, method: :get %>
+        <%= button_to "Cadastro", signup_path, method: :get %>
       <% end %>
   </body>
 </html>
