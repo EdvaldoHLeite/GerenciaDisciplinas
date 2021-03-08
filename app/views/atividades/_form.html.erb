@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :disciplina_id %>
-    <%= form.text_field :disciplina_id %>
+    <%= form.select(:disciplina_id, options_for_select(@disciplinas)) %>
   </div>
 
   <div class="actions">

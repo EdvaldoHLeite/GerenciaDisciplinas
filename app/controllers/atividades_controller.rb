@@ -1,5 +1,7 @@
 class AtividadesController < ApplicationController
   before_action :set_atividade, only: %i[ show edit update destroy ]
+  before_action :set_disciplinas, only: %i[ new create edit update ]
+  before_action :authorized, only: %i[ index show new edit create update destroy]
 
   # GET /atividades or /atividades.json
   def index
@@ -60,6 +62,10 @@ class AtividadesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_atividade
       @atividade = Atividade.find(params[:id])
+    end
+
+    def set_disciplinas
+      @disciplinas = Disciplina.all.map{ |c| [c.nome.to_s + "-" + c.anoLetivo.to_s + "-" + c.turma_id.to_s, c.id]}
     end
 
     # Only allow a list of trusted parameters through.
