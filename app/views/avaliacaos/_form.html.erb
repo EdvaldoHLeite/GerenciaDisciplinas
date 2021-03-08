@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= form.label :atividade_id %>
-    <%= form.text_field :atividade_id %>
+    <%= form.select(:atividade_id, options_for_select(@atividades)) %>
   </div>
 
   <div class="field">
     <%= form.label :aluno_id %>
-    <%= form.text_field :aluno_id %>
+    <%= form.select(:aluno_id, options_for_select(@alunos)) %>
   </div>
 
   <div class="actions">

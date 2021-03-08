@@ -1,5 +1,8 @@
 class AvaliacaosController < ApplicationController
   before_action :set_avaliacao, only: %i[ show edit update destroy ]
+  before_action :set_atividades, only: %i[ new create edit update ]
+  before_action :set_alunos, only: %i[ new create edit update ]
+  before_action :authorized, only: %i[ index show new edit create update destroy]
 
   # GET /avaliacaos or /avaliacaos.json
   def index
@@ -60,6 +63,14 @@ class AvaliacaosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_avaliacao
       @avaliacao = Avaliacao.find(params[:id])
+    end
+
+    def set_atividades
+      @atividades = Atividade.all.map{ |c| [c.titulo.to_s + "-" + c.bimestre.to_s, c.id]}
+    end
+
+    def set_alunos
+      @alunos = Aluno.all.map{ |c| [c.nome.to_s, c.id]}
     end
 
     # Only allow a list of trusted parameters through.
