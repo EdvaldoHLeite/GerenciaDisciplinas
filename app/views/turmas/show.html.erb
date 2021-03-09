@@ -15,5 +15,27 @@
   <%= @turma.ano %>
 </p>
 
+<p>
+  <strong>Disciplinas: </strong>
+<table>
+  <thead>
+  <tr>
+    <th>Nome</th>
+    <th>Ano Letivo</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @turma.disciplinas.each do |disciplina| %>
+    <tr>
+      <td><%= disciplina.nome %></td>
+      <td><%= disciplina.anoLetivo %></td>
+      <td><%= link_to 'Ver Disciplina', disciplina %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</p>
+
 <%= link_to 'Edit', edit_turma_path(@turma) %> |
 <%= link_to 'Back', turmas_path %>

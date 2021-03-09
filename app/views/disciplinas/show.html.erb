@@ -20,5 +20,31 @@
   <%= @disciplina.user_id %>
 </p>
 
+<p>
+  <strong>Atividades </strong>
+<table>
+  <thead>
+  <tr>
+    <th>Titulo</th>
+    <th>Descrição</th>
+    <th>Bimestre</th>
+    <th>Média</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @disciplina.atividades.each do |atividade| %>
+    <tr>
+      <td><%= atividade.titulo %></td>
+      <td><%= atividade.descricao %></td>
+      <td><%= atividade.bimestre %></td>
+      <td><%= atividade.media %></td>
+      <td><%= link_to 'Ver Atividade', atividade %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</p>
+
 <%= link_to 'Edit', edit_disciplina_path(@disciplina), id: "edit-#{@disciplina.nome}-#{@disciplina.anoLetivo}-#{@disciplina.turma_id}-#{@disciplina.user_id}" %> |
 <%= link_to 'Back', disciplinas_path %>
