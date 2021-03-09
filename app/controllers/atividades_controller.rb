@@ -2,6 +2,7 @@ class AtividadesController < ApplicationController
   before_action :set_atividade, only: %i[ show edit update destroy ]
   before_action :set_disciplinas, only: %i[ new create edit update ]
   before_action :authorized, only: %i[ index show new edit create update destroy]
+  #before_action :media_avaliacoes, only: %i[index]
 
   # GET /atividades or /atividades.json
   def index

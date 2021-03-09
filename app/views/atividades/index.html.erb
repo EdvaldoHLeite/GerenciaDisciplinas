@@ -10,6 +10,7 @@
       <th>Bimestre</th>
       <th>Data</th>
       <th>Disciplina</th>
+      <th>Média das avaliações</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
         <td><%= atividade.bimestre %></td>
         <td><%= atividade.data %></td>
         <td><%= atividade.disciplina_id %></td>
+        <td><%= atividade.media %></td>
         <td><%= link_to 'Show', atividade %></td>
         <td><%= link_to 'Edit', edit_atividade_path(atividade) %></td>
         <td><%= link_to 'Destroy', atividade, method: :delete, data: { confirm: 'Are you sure?' } %></td>

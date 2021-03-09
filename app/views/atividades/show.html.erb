@@ -25,5 +25,28 @@
   <%= @atividade.disciplina_id %>
 </p>
 
+<p>
+  <strong>Avaliações dos alunos </strong>
+  <table>
+    <thead>
+      <tr>
+        <th>Aluno</th>
+        <th>Nota</th>
+        <th>Observações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @atividade.avaliacaos.each do |avaliacao| %>
+        <tr>
+          <td><%= avaliacao.aluno.nome %></td>
+          <td><%= avaliacao.pontos %></td>
+          <td><%= avaliacao.observacoes %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
+
 <%= link_to 'Edit', edit_atividade_path(@atividade) %> |
 <%= link_to 'Back', atividades_path %>
