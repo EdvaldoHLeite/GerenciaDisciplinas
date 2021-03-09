@@ -61,7 +61,13 @@ class AtividadesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_atividade
-      @atividade = Atividade.find(params[:id])
+      disciplinas = current_user.disciplinas
+      disciplinas.each do |disciplina|
+        @atividade = disciplina.atividades.find(params[:id])
+        if !@atividade.nil?
+          break
+        end
+      end
     end
 
     def set_disciplinas
