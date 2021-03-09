@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Avaliacaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pontos</th>
+      <th>Observacoes</th>
+      <th>Atividade</th>
+      <th>Aluno</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @avaliacaos.each do |avaliacao| %>
+      <tr>
+        <td><%= avaliacao.pontos %></td>
+        <td><%= avaliacao.observacoes %></td>
+        <td><%= avaliacao.atividade_id %></td>
+        <td><%= avaliacao.aluno_id %></td>
+        <td><%= link_to 'Show', avaliacao %></td>
+        <td><%= link_to 'Edit', edit_avaliacao_path(avaliacao), id:"e-#{avaliacao.atividade_id}-#{avaliacao.aluno_id}" %></td>
+        <td><%= link_to 'Destroy', avaliacao, method: :delete, data: { confirm: 'Are you sure?' }, id:"d-#{avaliacao.atividade_id}-#{avaliacao.aluno_id}" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Avaliacao', new_avaliacao_path %>

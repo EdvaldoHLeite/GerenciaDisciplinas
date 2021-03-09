@@ -1,5 +1,7 @@
 class AlunosController < ApplicationController
   before_action :set_aluno, only: %i[ show edit update destroy ]
+  before_action :set_turmas, only: %i[ new create edit update ]
+  before_action :authorized, only: %i[ index show new edit create update destroy]
 
   # GET /alunos or /alunos.json
   def index
@@ -60,6 +62,10 @@ class AlunosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_aluno
       @aluno = Aluno.find(params[:id])
+    end
+
+    def set_turmas
+      @turmas = Turma.all.map{ |c| [c.ano.to_s + "º-" + c.letra.to_s + "-" + c.anoLetivo.to_s, c.id]}
     end
 
     # Only allow a list of trusted parameters through.

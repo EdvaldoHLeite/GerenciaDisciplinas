@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :avaliacaos
+  resources :atividades
   resources :alunos
   resources :disciplinas
   resources :turmas

@@ -8,7 +8,10 @@
 
     <% if logged_in? %>
       <%= link_to "Turmas", turmas_path, method: :get %> |
-      <%= link_to "Disciplinas", disciplinas_path, method: :get %>
+      <%= link_to "Disciplinas", disciplinas_path, method: :get %> |
+      <%= link_to "Alunos", alunos_path, method: :get %> |
+      <%= link_to "Atividades", atividades_path, method: :get %> |
+      <%= link_to "Avaliações", avaliacaos_path, method: :get %> <br>
     <% else %>
       <%= button_to "Fazer login", login_path, method: :get %>
       <%= button_to "Cadastro", signup_path, method: :get %>

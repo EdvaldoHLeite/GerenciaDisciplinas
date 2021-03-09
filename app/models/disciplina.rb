@@ -1,6 +1,7 @@
 class Disciplina < ApplicationRecord
   belongs_to :turma
   belongs_to :user
+  has_many :atividades, dependent: :destroy
 
   validates :nome,
             presence: true,

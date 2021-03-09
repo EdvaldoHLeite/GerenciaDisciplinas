@@ -19,5 +19,11 @@ script:
   - bundle exec rails test test/models/user_test.rb
   - bundle exec rails test test/models/turma_test.rb
   - bundle exec rails test test/models/disciplina_test.rb
+  - bundle exec rails test test/models/aluno_test.rb
+  - bundle exec rails test test/models/atividade_test.rb
+  - bundle exec rails test test/models/avaliacao_test.rb
   - bundle exec cucumber features/user.feature
   - bundle exec cucumber features/disciplina.feature
+  - bundle exec cucumber features/aluno.feature
+  - bundle exec cucumber features/atividade.feature
+  - bundle exec cucumber features/avaliacao.feature

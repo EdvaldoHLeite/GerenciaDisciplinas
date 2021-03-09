@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pontos:</strong>
+  <%= @avaliacao.pontos %>
+</p>
+
+<p>
+  <strong>Observacoes:</strong>
+  <%= @avaliacao.observacoes %>
+</p>
+
+<p>
+  <strong>Atividade:</strong>
+  <%= @avaliacao.atividade_id %>
+</p>
+
+<p>
+  <strong>Aluno:</strong>
+  <%= @avaliacao.aluno_id %>
+</p>
+
+<%= link_to 'Edit', edit_avaliacao_path(@avaliacao) %> |
+<%= link_to 'Back', avaliacaos_path %>
