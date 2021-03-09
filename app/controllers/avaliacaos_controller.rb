@@ -66,7 +66,7 @@ class AvaliacaosController < ApplicationController
       disciplinas.each do |disciplina|
         disciplina.atividades.each do |atividade|
           @avaliacao = atividade.avaliacaos.find(params[:id])
-          if !@avaliacao.nil?
+          unless @avaliacao.nil?
             break
           end
         end

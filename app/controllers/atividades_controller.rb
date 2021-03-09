@@ -64,7 +64,7 @@ class AtividadesController < ApplicationController
       disciplinas = current_user.disciplinas
       disciplinas.each do |disciplina|
         @atividade = disciplina.atividades.find(params[:id])
-        if !@atividade.nil?
+        unless @atividade.nil?
           break
         end
       end
