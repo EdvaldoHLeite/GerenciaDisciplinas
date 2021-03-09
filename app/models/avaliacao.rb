@@ -6,9 +6,9 @@ class Avaliacao < ApplicationRecord
             presence: true,
             numericality: {
               only_integer: true,
-              greater_than_or_equal_to: 1,
+              greater_than_or_equal_to: 0,
               less_than_or_equal_to: 10,
-              message: "Pontuação de 1 até 10" }
+              message: "Pontuação de 0 até 10" }
   validates :observacoes,
             length: {
               minimum: 0,

@@ -21,8 +21,8 @@
         <td><%= avaliacao.atividade_id %></td>
         <td><%= avaliacao.aluno_id %></td>
         <td><%= link_to 'Show', avaliacao %></td>
-        <td><%= link_to 'Edit', edit_avaliacao_path(avaliacao) %></td>
-        <td><%= link_to 'Destroy', avaliacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_avaliacao_path(avaliacao), id:"e-#{avaliacao.atividade_id}-#{avaliacao.aluno_id}" %></td>
+        <td><%= link_to 'Destroy', avaliacao, method: :delete, data: { confirm: 'Are you sure?' }, id:"d-#{avaliacao.atividade_id}-#{avaliacao.aluno_id}" %></td>
       </tr>
     <% end %>
   </tbody>
