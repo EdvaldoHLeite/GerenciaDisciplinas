@@ -79,15 +79,11 @@ class AtividadesController < ApplicationController
     end
 
     def set_disciplinas
-      @disciplinas = Disciplina.all.map{ |c| [c.nome.to_s + "-" + c.anoLetivo.to_s + "-" + c.turma_id.to_s, c.id]}
+      @disciplinas = current_user.disciplinas.map{ |c| [c.nome.to_s + "-" + c.anoLetivo.to_s + "-" + c.turma_id.to_s, c.id]}
     end
 
     # Only allow a list of trusted parameters through.
     def atividade_params
       params.require(:atividade).permit(:titulo, :descricao, :bimestre, :data, :disciplina_id)
     end
-
-  #def atividade_params_index
-  # params.require(:atividade).permi(:bimestre)
-  #end
 end
