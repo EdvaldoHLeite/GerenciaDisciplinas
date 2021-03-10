@@ -5,7 +5,7 @@ class DisciplinasController < ApplicationController
 
   # GET /disciplinas or /disciplinas.json
   def index
-    @disciplinas = Disciplina.all
+    @disciplinas = Disciplina.all.where('user_id = ?', current_user.id)
   end
 
   # GET /disciplinas/1 or /disciplinas/1.json
@@ -62,7 +62,12 @@ class DisciplinasController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_disciplina
-      @disciplina = current_user.disciplinas.find(params[:id])
+      disciplina = Disciplina.find(params[:id])
+      if disciplina.user_id == current_user.id
+        @disciplina = disciplina
+      else
+        redirect_to disciplinas_path
+      end
     end
 
     def set_turmas
