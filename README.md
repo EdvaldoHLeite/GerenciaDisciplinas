@@ -1,7 +1,7 @@
 # GerenciaDisciplinas
-###[![Codacy Badge](https://app.codacy.com/project/badge/Grade/348cafd2265e4e2ab08298ff8acfe1db)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EdvaldoHLeite/GerenciaDisciplinas&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/348cafd2265e4e2ab08298ff8acfe1db)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EdvaldoHLeite/GerenciaDisciplinas&amp;utm_campaign=Badge_Grade)
 
-##Desenvolvido por 
+## Desenvolvido por 
 
 ![Edvaldo H. L.](https://github.com/EdvaldoHLeite) 
 
@@ -13,5 +13,5 @@ Implementação de software como requisito para aprovação na disciplina de Eng
 Sistema para controle de disciplinas, turmas, alunos e atividades de escola do fundamental.
 
 
-###Link do sistema no Heroku
+### Link do sistema no Heroku
 https://gerenciadisciplinas.herokuapp.com/
