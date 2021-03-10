@@ -16,7 +16,7 @@ turma2 = Turma.create([letra: 'B', anoLetivo: '2020', ano: '7'])
 turma3 = Turma.create([letra: 'C', anoLetivo: '2020', ano: '7'])
 
 # Disciplinas
-disciplina1 = Disciplina.new([nome: 'Inglês', anoLetivo: '2020', turma_id: turma1.id, user_id: user1.id])
+#disciplina1 = Disciplina.new([nome: 'Inglês', anoLetivo: '2020', turma_id: turma1.id, user_id: user1.id])
 
 # Alunos
-aluno1 = Aluno.create nome: "João Bernardo", turma_id: turma1.first.id
+#aluno1 = Aluno.create nome: "João Bernardo", turma_id: turma1.first.id
