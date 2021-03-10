@@ -1,4 +1,5 @@
 # GerenciaDisciplinas
+###[![Codacy Badge](https://app.codacy.com/project/badge/Grade/348cafd2265e4e2ab08298ff8acfe1db)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EdvaldoHLeite/GerenciaDisciplinas&amp;utm_campaign=Badge_Grade)
 
 ##Desenvolvido por 
 
