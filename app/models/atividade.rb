@@ -8,12 +8,20 @@ class Atividade < ApplicationRecord
   validates :data, presence: true
   validates :disciplina_id, presence: true
 
+  scope :tituloAtividade, lambda { |titulo| where(titulo: titulo) unless titulo.nil? }
+  scope :by_bimestre, lambda { |bimestre| where(bimestre: bimestre) unless bimestre.nil? }
+
   def media
     avaliacoes = avaliacaos
     soma = 0
-    avaliacoes.each do |avaliacao|
-      soma += avaliacao.pontos
+    quantidade = avaliacoes.count
+    unless quantidade == 0
+      avaliacoes.each do |avaliacao|
+        soma += avaliacao.pontos
+      end
+    else
+      quantidade = 1
     end
-    return soma / avaliacoes.count
+    return soma / quantidade
   end
 end

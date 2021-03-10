@@ -2,11 +2,18 @@ class AtividadesController < ApplicationController
   before_action :set_atividade, only: %i[ show edit update destroy ]
   before_action :set_disciplinas, only: %i[ new create edit update ]
   before_action :authorized, only: %i[ index show new edit create update destroy]
-  #before_action :media_avaliacoes, only: %i[index]
 
   # GET /atividades or /atividades.json
   def index
     @atividades = Atividade.all
+    unless :bimestre.nil?
+      @atividades = Atividade.by_bimestre(params[:bimestre]).all
+    end
+    puts ("Parametros " + params.to_s)
+    respond_to do |format|
+     format.html # index.html.erb
+     format.json { render json: @atividades}
+    end
   end
 
   # GET /atividades/1 or /atividades/1.json
@@ -79,4 +86,8 @@ class AtividadesController < ApplicationController
     def atividade_params
       params.require(:atividade).permit(:titulo, :descricao, :bimestre, :data, :disciplina_id)
     end
+
+  #def atividade_params_index
+  # params.require(:atividade).permi(:bimestre)
+  #end
 end

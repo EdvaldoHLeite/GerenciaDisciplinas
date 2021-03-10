@@ -2,6 +2,12 @@
 
 <h1>Atividades</h1>
 
+<%= "Bimestre:" %>
+<% [1,2,3,4].each do |bimestre| %>
+  <%= link_to bimestre, {controller: 'atividades', action: 'index', bimestre: bimestre}  %>
+<% end %>
+<%= link_to 'Todos', {controller: 'atividades', action: 'index'}  %>
+
 <table>
   <thead>
     <tr>
