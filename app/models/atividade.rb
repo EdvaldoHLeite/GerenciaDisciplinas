@@ -8,7 +8,6 @@ class Atividade < ApplicationRecord
   validates :data, presence: true
   validates :disciplina_id, presence: true
 
-  scope :tituloAtividade, lambda { |titulo| where(titulo: titulo) unless titulo.nil? }
   scope :by_bimestre, lambda { |bimestre| where(bimestre: bimestre) unless bimestre.nil? }
 
   def media

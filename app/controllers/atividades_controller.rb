@@ -5,11 +5,17 @@ class AtividadesController < ApplicationController
 
   # GET /atividades or /atividades.json
   def index
-    @atividades = Atividade.all
+    @atividades = current_user.atividades
     unless :bimestre.nil?
-      @atividades = Atividade.by_bimestre(params[:bimestre]).all
+      @atividades = []
+      @atividades_bimestre = Atividade.by_bimestre(params[:bimestre]).all
+      @atividades_bimestre.each do |atividade|
+        if atividade.disciplina.user_id == current_user.id
+          @atividades << atividade
+        end
+      end
     end
-    puts ("Parametros " + params.to_s)
+
     respond_to do |format|
      format.html # index.html.erb
      format.json { render json: @atividades}

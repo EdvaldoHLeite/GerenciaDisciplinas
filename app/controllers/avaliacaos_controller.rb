@@ -74,7 +74,12 @@ class AvaliacaosController < ApplicationController
     end
 
     def set_atividades
-      @atividades = Atividade.all.map{ |c| [c.titulo.to_s + "-" + c.bimestre.to_s, c.id]}
+      @atividades = []
+      current_user.disciplinas.each do |disciplina|
+        @atividades << disciplina.atividades
+      end
+
+      @atividades = @atividades.map{ |c| [c.titulo.to_s + "-" + c.bimestre.to_s, c.id]}
     end
 
     def set_alunos
