@@ -10,6 +10,10 @@ class Atividade < ApplicationRecord
 
   scope :by_bimestre, lambda { |bimestre| where(bimestre: bimestre) unless bimestre.nil? }
 
+  def user_id
+    @user_id = disciplina.user_id
+  end
+
   def media
     avaliacoes = avaliacaos
     soma = 0

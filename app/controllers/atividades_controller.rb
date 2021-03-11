@@ -5,15 +5,9 @@ class AtividadesController < ApplicationController
 
   # GET /atividades or /atividades.json
   def index
-    @atividades = current_user.atividades
+    @atividades = Atividade.all
     unless :bimestre.nil?
-      @atividades = []
-      @atividades_bimestre = Atividade.by_bimestre(params[:bimestre]).all
-      @atividades_bimestre.each do |atividade|
-        if atividade.disciplina.user_id == current_user.id
-          @atividades << atividade
-        end
-      end
+      @atividades = Atividade.by_bimestre(params[:bimestre]).all
     end
 
     respond_to do |format|
@@ -75,12 +69,12 @@ class AtividadesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_atividade
-      disciplinas = current_user.disciplinas
-      disciplinas.each do |disciplina|
-        @atividade = disciplina.atividades.find(params[:id])
-        unless @atividade.nil?
-          break
-        end
+      @atividade = Atividade.find(params[:id])
+      atividade = Atividade.find(params[:id])
+      if atividade.user_id == current_user.id
+        @atividade = atividade
+      else
+        redirect_to atividades_path
       end
     end
 
