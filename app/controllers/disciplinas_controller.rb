@@ -71,7 +71,7 @@ class DisciplinasController < ApplicationController
     end
 
     def set_turmas
-      @turmas = Turma.all.map{ |c| [c.ano.to_s + "º-" + c.letra.to_s + "-" + c.anoLetivo.to_s, c.id]}
+      @turmas = Turma.all.map{ |turma| [turma.ano.to_s + "º-" + turma.letra.to_s + "-" + turma.anoLetivo.to_s, turma.id]}
     end
 
     # Only allow a list of trusted parameters through.

@@ -83,11 +83,11 @@ class AvaliacaosController < ApplicationController
         end
       end
 
-      @atividades = @atividades.map{ |c| [c.titulo.to_s + "-" + c.bimestre.to_s, c.id]}
+      @atividades = @atividades.map{ |ativ| [ativ.titulo.to_s + "-" + ativ.bimestre.to_s, ativ.id]}
     end
 
     def set_alunos
-      @alunos = Aluno.all.map{ |c| [c.nome.to_s, c.id]}
+      @alunos = Aluno.all.map{ |aluno| [aluno.nome.to_s, aluno.id]}
     end
 
     # Only allow a list of trusted parameters through.
