@@ -62,14 +62,12 @@ class AvaliacaosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_avaliacao
-      disciplinas = current_user.disciplinas
-      disciplinas.each do |disciplina|
-        disciplina.atividades.each do |atividade|
-          @avaliacao = atividade.avaliacaos.find(params[:id])
-          unless @avaliacao.nil?
-            break
-          end
-        end
+      @avaliacao = Avaliacao.find(params[:id])
+      avaliacao = Atividade.find(params[:id])
+      if avaliacao.user_id == current_user.id
+        @avaliacao = avaliacao
+      else
+        redirect_to avaliacaos_path
       end
     end
 

@@ -16,4 +16,8 @@ class Avaliacao < ApplicationRecord
               message: "Observações com no máximo 100 caracteres"}
   validates :atividade_id, presence: true
   validates :aluno_id, presence: true
+
+  def user_id
+    @user_id = atividade.user_id
+  end
 end
